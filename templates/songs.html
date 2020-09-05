@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+All Songs
+{% endblock %} 
+
+{% block body %}
+
+{% for songs in song %}
+<div class="container">
+<div class="card mb-3" style="max-width: 540px; padding-top:3%;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="/media/{{songs.image}}" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{songs.name}}</h5>
+        <p class="card-text">{{songs.tags}}</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <a href="/musicbeats/songs/{{songs.song_id}}" class="btn btn-outline-danger">Listen</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+</div>
+{% endblock body %} 
